@@ -1,0 +1,25 @@
+:root {
+    --ew: #009645;
+    --cg: var(--ew);
+    --ns: #D42E12;
+    --ne: #9900AA;
+    --cc: #FA9E0D;
+    --ce: var(--cc);
+    --dt: #005EC4;
+    --te: #9D5B25;
+    --jr: #0099AA;
+    --je: var(--jr);
+    --jw: var(--jr);
+    --js: var(--jr);
+    --cr: #97C616;
+    --cp: var(--cr);
+    --lrt: #748477;
+    --pe: var(--lrt);
+    --pw: var(--lrt);
+    --se: var(--lrt);
+    --sw: var(--lrt);
+    --bp: var(--lrt);
+    --pt: var(--lrt);
+    --st: var(--lrt);
+    --sn: #F16D9F;
+}

@@ -1,0 +1,56 @@
+@import "colors/colors.css";
+@import "table/table.css";
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --back: var(--barbadosblue);
+    --offback: #082D87;
+    --text: white;
+    --alttext: #50D8D7;
+    --border: 1px solid var(--contrast);
+    --contrast-border: 1px solid var(--contrast);
+    --contrast: var(--barbadosyellow);
+    --link: var(--text);
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 2vh 10px 0;
+    font-family: Gothic A1,sans-serif;
+    font-size: 0.9rem;
+    line-height: 2;
+    background: var(--back);
+    color: var(--alttext);
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: var(--link);
+}
+
+h1 {
+    font-family: Gothic,sans-serif;
+    font-size: 3rem;
+    line-height: 1;
+    margin-top: 0;
+    color: var(--text);
+}
+
+tr {
+    /* color: white; */
+}

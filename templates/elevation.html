@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html land="en">
+<head>
+    <title>Distance Calculator</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'admin/css/base.css' %}"> -->
+</head>
+<body>
+    <form method="POST" action="">{% csrf_token %}
+        <label for="lat">Latitude</label>
+        <input type="float" name="lat" value={{lat}}>
+        <label for="lon">Longitude</label>
+        <input type="float" name="lon" value={{lon}}>
+        <button type="submit">Upload text</button>
+    </form>
+    {% if elevation %}
+    <h1>{{elevation}}m</h1>
+    {% elif invalid %}
+    <h1>Invalid inputs!</h1>
+    {% elif out_of_bounds %}
+    <h1>Coordinates out of bounds!</h1>
+    {% else %}
+    <h1>Elevation Calculator</h1>
+    {% endif %}
+    <table>
+        <tr>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Elevation</th>
+        </tr>
+        {% for query in latest %}
+        <tr>
+            <td>{{ query.lat }}</td>
+            <td>{{ query.lon }}</td>
+            <td>{{ query.elevation }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

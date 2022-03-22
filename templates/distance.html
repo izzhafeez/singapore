@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html land="en">
+<head>
+    <title>Distance Calculator</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'admin/css/base.css' %}"> -->
+</head>
+<body>
+    <form method="POST" action="">{% csrf_token %}
+        <label for="lat1">Lat 1</label>
+        <input type="float" name="lat1" value={{lat1}}>
+        <label for="lon1">Long 1</label>
+        <input type="float" name="lon1" value={{lon1}}>
+        <label for="lat2">Lat 2</label>
+        <input type="float" name="lat2" value={{lat2}}>
+        <label for="lon2">Long 2</label>
+        <input type="float" name="lon2" value={{lon2}}>
+        <button type="submit">Upload text</button>
+    </form>
+    {% if dist %}
+    <h1>{{dist}}km</h1>
+    {% elif invalid %}
+    <h1>Invalid inputs!</h1>
+    {% else %}
+    <h1>Distance Calculator</h1>
+    {% endif %}
+    <table>
+        <tr>
+            <th>Lat 1</th>
+            <th>Lon 1</th>
+            <th>Lat 2</th>
+            <th>Lon 2</th>
+        </tr>
+        {% for query in latest %}
+        <tr>
+            <td>{{ query.lat1 }}</td>
+            <td>{{ query.lon1 }}</td>
+            <td>{{ query.lat2 }}</td>
+            <td>{{ query.lon2 }}</td>
+            <td>{{ query.elevation }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
